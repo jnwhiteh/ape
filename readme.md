@@ -18,7 +18,8 @@ can edit another section and see how those can be merged back togeher.
 
 
 ### Elena
-a;slda;sldmkj
+Git rocks but someone should really write some better tooling for Visual Studio devs
+
 
 ### Artur
 
