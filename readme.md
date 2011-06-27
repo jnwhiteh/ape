@@ -20,6 +20,7 @@ Mystery man
 
 
 ### Elena
+Git rocks but someone should really write some better tooling for Visual Studio devs
 
 
 ### Artur
