@@ -24,7 +24,7 @@
     <target name="compile" depends="prepare">
         <javac srcdir="${src.dir}" destdir="${build.prod.dir}" classpathref="classpath" />
     </target>
-    <target name="jar" depends="compile, run-unit-tests, run-system-tests">
+    <target name="jar" depends="clean, compile, run-unit-tests, run-system-tests">
         <jar destfile="${build.dir}/Encrypt.jar" basedir="${build.prod.dir}">
             <manifest>
                 <attribute name="Main-Class" value="com.develogical.crypto.Encrypt"/>
