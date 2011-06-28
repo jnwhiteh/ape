@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+                         "http://castor.exolab.org/mapping.dtd">
+<mapping>
+   <class name="fi.iki.jka.JPhotoCollection">
+     <map-to xml="doc"/>
+
+     <field name="pageInfo"
+             type="fi.iki.jka.JPhotoPageInfo" >
+	     <bind-xml name="pageinfo"/>
+     </field>
+     <field name="photos"
+             type="fi.iki.jka.JPhoto"
+	     collection="arraylist"  required="true" >
+	     <bind-xml auto-naming="deriveByClass" node="element" />
+     </field>
+     <field name="categoryNames"
+             type="java.lang.String"
+	     collection="arraylist" >
+	     <bind-xml name="category-name"/>
+     </field>
+   </class>
+
+
+   <!-- IMG METADATA -->
+
+   <class name="fi.iki.jka.JPhoto">
+     <map-to xml="img"/>
+
+     <field name="imageName" type="java.lang.String">
+	     <bind-xml name="src" node="attribute"/>
+     </field>
+
+     <field name="originalName" type="java.lang.String">
+	     <bind-xml name="original" node="attribute"/>
+     </field>
+
+     <field name="height" type="integer">
+	     <bind-xml name="h" node="attribute"/>
+     </field>
+
+     <field name="width" type="integer">
+	     <bind-xml name="w" node="attribute"/>
+     </field>
+
+     <field name="Text" type="java.lang.String">
+     </field>
+
+     <field name="Category" type="java.lang.String">
+     </field>
+
+     <field name="exif"
+             type="fi.iki.jka.JPhotoExif" >
+	     <bind-xml name="exif"/>
+     </field>
+
+   </class>
+
+
+   <class name="fi.iki.jka.JPhotoAlbumLink" extends="fi.iki.jka.JPhoto">
+     <map-to xml="albumlink"/>
+
+     <field name="albumLink" type="java.lang.String">
+	     <bind-xml name="link" node="attribute"/>
+     </field>
+   </class>
+
+   <!-- EXIF METADATA -->
+
+   <class name="fi.iki.jka.JPhotoExif">
+    <map-to xml="exif"/>
+        <field name="width" type="integer" direct="true" />
+        <field name="height" type="integer" direct="true" />
+        <field name="aperture" type="string" direct="true" />
+        <field name="exposureTime" type="string" direct="true" />
+        <field name="exposureBias" type="string" direct="true" />
+        <field name="iso" type="string" direct="true" />
+        <field name="date" type="string" direct="true" />
+   </class>
+
+   <class name="fi.iki.jka.JPhotoPageInfo">
+    <map-to xml="pageinfo"/>
+        <field name="title" type="string" direct="true" />
+        <field name="keywords" type="string" direct="true" />
+        <field name="description" type="string" direct="true" />
+        <field name="foreground" type="string" direct="true" />
+        <field name="background" type="string" direct="true" />
+        <field name="watermark" type="string" direct="true" />
+        <field name="coverPhotoName" type="string" direct="true" />
+        <field name="outputDirectory" type="string" direct="true" />
+        <field name="albumName" type="string" direct="true" />
+   </class>
+
+</mapping>

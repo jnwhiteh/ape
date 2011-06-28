@@ -1,0 +1,2 @@
+Class-Path: castor.jar xerces.jar metadata-extractor-2.2.2.jar lib
+Main-Class: fi.iki.jka.JPhotoFrame

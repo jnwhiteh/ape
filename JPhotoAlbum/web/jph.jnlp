@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp
+  spec="1.0+"
+  codebase="http://jphotoalbum.jpkware.com/"
+  <!-- codebase="http://localhost:8080/photos/jph/" -->
+  href="jph.jnlp">
+  
+  
+  <information>
+    <title>JPhotoAlbum</title>
+    <vendor>jpkware.com</vendor>
+    <homepage href="index.html"/>
+    <description>JPhotoAlbum - Organize and publish digital photos</description>
+    <icon href="JPhotoAlbum.jpg"/>
+    <icon kind="splash" href="JPhotoAlbumLoading.jpg"/>
+    <offline-allowed/>
+    </information>
+
+  <security>
+      <all-permissions/>
+  </security>
+
+  <application-desc main-class="fi.iki.jka.JPhotoFrame"/>
+  
+  <resources>
+    <j2se version="1.4+" initial-heap-size="32m" max-heap-size="256m" />
+    <property name="webstart" value="true"/>   
+    <jar href="JPhotoAlbum.jar"/>
+    <jar href="castor.jar"/>
+    <jar href="xerces.jar"/>
+    <jar href="metadata-extractor-2.1.jar"/>
+  </resources>
+  
+</jnlp> 
+

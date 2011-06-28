@@ -1,0 +1,15 @@
+- photoshow should listen for changes in collection
+- collections should notify each other, e.g. for cover photo change
+- rotate image & thumb (optionally using exif headers?)
+- zoom image (1:1, fit vert, fit horiz)
+- crop image (4:3, 3:2 rectangles)
+- CGI to display frame targets with correct colors and Exif info
+- link to other jph files (preferably from description)
+- convert old XML files to JPH, remove extra linefeeds from text
+- NO NEED, webstart has console: log to file if property "webstart" set
+- trace log window
+- AWT-only photoshow, perhaps an applet, too
+- subtitled export sizes 1024x768, 1280x1024, 1600x1200 (e.g. screen savers)
+- favicon.ico for photos and jpkware.com
+- windows installer with .jph bindings etc
+- export from multiple frames causes major problems, due to static status

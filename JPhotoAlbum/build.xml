@@ -1,0 +1,151 @@
+<project name="JPhotoAlbum" default="jphotoalbum" basedir=".">
+<!-- $Id: build.xml,v 1.4 2005/08/30 18:21:01 jkarjala Exp $ -->
+
+<!-- set global properties for this build -->
+
+<!-- Source file directory -->
+<property name="dir.src" value="src" />
+
+<!-- Directory for java build -->
+<property name="dir.build" value="build" />
+
+<!-- Directory for jar file -->
+<property name="dir.jar" value="lib" />
+
+<!-- webstart directory -->
+<property name="webstart.target" value="/website/jphotoalbum" />
+
+<!-- target jar without lib -->
+<property name="jphotoalbum.jar" value="JPhotoAlbum.jar" />
+
+<!-- main target jar -->
+<property name="jphoto.jar" value="${dir.jar}/${jphotoalbum.jar}" />
+
+
+<!-- Classpath for the modules -->
+<path id="class.path">
+  <pathelement location="lib/" />
+  <fileset dir="lib">
+    <include name="**/*.jar" />
+  </fileset>
+</path>
+                         
+<target name="all">
+  <!-- Compiles java code  -->
+  <echo message="Building" />
+  <antcall target="java" />
+</target>
+
+<target name="clean" >
+  <!-- Remove compiled files -->
+  <echo message="Cleaning ...."  />
+  <antcall target="java_clean" />
+</target>
+
+<!-- The rest of the file contains helper targets.  
+     These should not be given as command line options -->
+
+<target name="java_clean">
+  <!-- Clean up compiled Java classes -->
+  <echo message="Cleaning Java compilation " />
+
+  <!-- Delete the ${dir.build} directory tree -->
+  <delete dir="${dir.build}" />
+
+  <!-- Delete all class files from the source directory -->
+  <delete>
+    <fileset dir="${dir.src}" includes="**/*.class" />
+  </delete>
+</target>
+
+<target name="java_compile" depends="set_java_env">
+  <!-- Compile java classes --> 
+  <echo message="Compiling Java classes into '${dir.build}' directory ." />
+  
+  <!-- Create build directory -->
+  <mkdir dir="${dir.build}" />
+
+  <!-- Compile the java code from ${dir.src} into ${dir.build} -->
+  <javac srcdir="${dir.src}" destdir="${dir.build}"  debug="true">
+    <classpath refid="class.path" />
+  </javac>
+  
+  <!-- Delete all class files from the source directory -->
+  <delete>
+    <fileset dir="${dir.src}" includes="*.class" />
+  </delete>
+</target>
+
+<target name="set_java_env" unless="dir.build">
+  <!-- Set default Java environment, if not set before -->
+  <echo message="Java compilation mode not set. Setting mode to default "/>
+</target>
+
+<patternset id="fi.sources" >
+  <include name="src/**/*.java"/>
+</patternset>
+
+<patternset id="lib.ext" >
+  <include name="lib/castor.jar"/>
+  <include name="lib/metadata-extractor-2.2.2.jar"/>
+  <include name="lib/xerces.jar"/>
+</patternset>
+
+<patternset id="other.sources" >
+  <include name="JPhotoAlbum.bat"/>
+  <include name="build.xml"/>
+  <include name="jphoto.reg"/>
+  <include name="todo.txt"/>
+  <include name="LICENCE.TXT"/>
+  <include name="castor.properties"/>
+  <include name="jphoto.mapping.xml"/>
+  <include name="jphotohelp.html"/>
+  <include name="templates/*.*"/>
+  <include name="pics/*.*"/>
+</patternset>
+
+<patternset id="webstart.sources" >
+  <include name="jph.jnlp"/>
+  <include name="JPhotoAlbum.html"/>
+  <include name="JPhotoAlbum*.jpg"/>
+</patternset>
+
+<target name="jphotoalbum" depends="java_compile">
+  <!-- Creates jar file -->
+  <echo message="Creating jar file into '${dir.jar}' directory." />
+  
+  <!-- Create the ${dir.jar} directory -->
+  <mkdir dir="${dir.jar}" />
+
+    <jar jarfile="${jphoto.jar}" manifest="${dir.src}/fi/iki/jka/jphoto.manifest" >
+      <fileset dir="${dir.build}">
+        <include name="fi/iki/jka/*.class" />
+        <include name="com/drew/**/*.class" />
+      </fileset>
+      <fileset dir="">
+        <include name="jphoto.mapping.xml" />
+        <include name="templates/jphoto*.xsl" />
+        <include name="templates/jphoto.js" />
+        <include name="pics/*" />
+        <include name="jphotohelp.html" />
+        <include name="castor.properties" />
+      </fileset>
+    </jar>
+</target>
+
+<target name="release" depends="jphotoalbum">
+  <echo message="Signing jar file and copying files to ${webstart.target}." />
+    <signjar jar="${jphoto.jar}" alias="jph" keystore="../jph.jks"
+        storepass="password" />
+
+    <zip zipfile="JPhotoAlbum.zip" update="true">
+      <fileset dir="." >
+         <include name="${jphoto.jar}" />
+         <patternset refid="fi.sources"/>
+         <patternset refid="other.sources"/>
+         <patternset refid="lib.ext"/>
+      </fileset>
+    </zip>
+</target>
+
+</project>

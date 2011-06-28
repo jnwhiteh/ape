@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/xerces.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/castor.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/metadata-extractor-2.2.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/xalan.jar!/" />
+    <libelement value="file://$MODULE_DIR$/resources" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/build" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="xerces.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/xerces.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="castor.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/castor.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="metadata-extractor-2.2.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/metadata-extractor-2.2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xalan.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/xalan.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="resources">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/resources" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
