@@ -10,9 +10,9 @@ public abstract class InvoiceBase {
     protected List<LineItem> items = new ArrayList<LineItem>();
     protected BigDecimal total = new BigDecimal(0);
 
-    protected abstract String GetText();
-
     protected void addLineItem(LineItem item) {
         items.add(item);
     }
+
+    protected abstract String GetText();
 }

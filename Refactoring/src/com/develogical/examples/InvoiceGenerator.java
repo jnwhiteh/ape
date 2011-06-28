@@ -11,4 +11,9 @@ public class InvoiceGenerator {
     {
         return new FRInvoice();
     }
+
+    public static InvoiceBase BuildAsNotCountrySpecificInvoice()
+    {
+        return new NotCountrySpecificInvoice();
+    }
 }

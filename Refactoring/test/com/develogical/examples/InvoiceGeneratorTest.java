@@ -4,32 +4,33 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class InvoiceGeneratorTest {
 
-//    @Test
-//    public void totalsUpPricesOfItems() {
-//        InvoiceGenerator generator = new InvoiceGenerator();
-//
-//        invoice.addLineItem(new LineItem("item1", new BigDecimal("100.00")));
-//        invoice.addLineItem(new LineItem("item2", new BigDecimal("150.00")));
-//
-//        String invoiceText = generator.GetText();
-//
-//        assertThat(invoiceText, containsString("Total 250.00"));
-//    }
-//
-//    @Test
-//    public void doesNotAddVatIfNoCountrySpecified() {
-//        InvoiceGenerator generator = new InvoiceGenerator();
-//
-//        invoice.addLineItem(new LineItem("item1", new BigDecimal("100.00")));
-//        String invoiceText = generator.GetText();
-//
-//        assertThat(invoiceText, not(containsString("VAT")));
-//    }
+    @Test
+    public void totalsUpPricesOfItems() {
+         InvoiceBase invoice = InvoiceGenerator.BuildAsNotCountrySpecificInvoice();
+
+        invoice.addLineItem(new LineItem("item1", new BigDecimal("100.00")));
+        invoice.addLineItem(new LineItem("item2", new BigDecimal("150.00")));
+
+        String invoiceText = invoice.GetText();
+
+        assertThat(invoiceText, containsString("Total 250.00"));
+    }
+
+    @Test
+    public void doesNotAddVatIfNoCountrySpecified() {
+        InvoiceBase invoice = InvoiceGenerator.BuildAsNotCountrySpecificInvoice();
+
+        invoice.addLineItem(new LineItem("item1", new BigDecimal("100.00")));
+        String invoiceText = invoice.GetText();
+
+        assertThat(invoiceText, not(containsString("VAT")));
+    }
 
     @Test
     public void ukVatIsAddedAtTwentyPercent() {
