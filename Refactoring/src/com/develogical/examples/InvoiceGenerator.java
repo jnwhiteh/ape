@@ -9,7 +9,7 @@ public class InvoiceGenerator {
 
     public static InvoiceBase BuildAsFranceInvoice()
     {
-        return new FRInvoice();
+        return new FranceInvoice();
     }
 
     public static InvoiceBase BuildAsNotCountrySpecificInvoice()

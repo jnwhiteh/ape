@@ -3,7 +3,7 @@ package com.develogical.examples;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class FRInvoice extends InvoiceBase{
+public class FranceInvoice extends InvoiceBase{
 
     @Override
     protected String GetText() {
