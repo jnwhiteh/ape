@@ -1,16 +1,17 @@
-import java.math.BigDecimal;
-
-import shopping.checkout.Product;
 import fit.ColumnFixture;
 import fit.Parse;
+import shopping.checkout.Product;
+
+import java.math.BigDecimal;
 
 
 public class GivenTheFollowingProducts extends ColumnFixture {
 	public String Name;
 	public String Barcode;
 	public BigDecimal UnitPrice;
-	
-	@Override
+    public boolean IsAvailableIn3For2Discount;
+
+    @Override
 	public void doRows(Parse rows) {
 		SystemUnderTest.productRange.deleteAll();
 		super.doRows(rows);
@@ -25,7 +26,7 @@ public class GivenTheFollowingProducts extends ColumnFixture {
 
 	@Override
 	public void execute() throws Exception {
-		SystemUnderTest.productRange.addProduct(new Product(Name, Barcode, UnitPrice));
+		SystemUnderTest.productRange.addProduct(new Product(Name, Barcode, UnitPrice, IsAvailableIn3For2Discount));
 	}
 	
 	@Override

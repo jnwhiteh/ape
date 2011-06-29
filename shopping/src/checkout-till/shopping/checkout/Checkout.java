@@ -58,16 +58,24 @@ public class Checkout implements BarcodeScanListener {
 
 	public void paymentAccepted() {
 		BigDecimal total = BigDecimal.ZERO;
-		
-		for (Product product : scannedProducts.keySet()) {
+
+        for (Product product : scannedProducts.keySet()) {
 			int count = unitsScanned(product);
-			BigDecimal lineTotal = product.priceOf(count);
-			
+
+            BigDecimal lineTotal = product.priceOf(count);
+
 			total = total.add(lineTotal);
-			
+
 			printer.printReceiptLine(product, count, lineTotal);
+
+            // If we qualify for a discount then print that on receipt and update total
+            if(count == 3 && product.isAvailableIn3For2Discount())
+            {
+                printer.printDiscountLine(product);
+                total = total.subtract(product.unitPrice());
+            }
 		}
-		
+
 		printer.printTotalLine(total);
 		printer.endOfReceipt();
 	}

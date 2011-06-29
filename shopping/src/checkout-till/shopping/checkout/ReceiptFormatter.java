@@ -21,4 +21,9 @@ public class ReceiptFormatter {
 	public void endOfReceipt() {
 		printer.feed();
 	}
+
+    public void printDiscountLine(Product product) {
+        printer.print("Discount: 1 " + product.name() + " @ "
+				+ product.unitPrice() + " each = -" + product.unitPrice() + "\n");
+    }
 }
