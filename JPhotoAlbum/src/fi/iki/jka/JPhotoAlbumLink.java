@@ -37,6 +37,10 @@ public class JPhotoAlbumLink extends JPhoto implements Observer {
         //System.out.println("JPhotoAlbumLink("+targetAlbum+")");
     }
 
+    public JPhotoAlbumLink(IPhotoCollection photos, String file) {
+        new JPhotoAlbumLink(photos, file);
+    }
+
     /**
      * Override to return the current cover photo for the album.
      */

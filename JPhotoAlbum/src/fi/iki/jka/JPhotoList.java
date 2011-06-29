@@ -6,17 +6,10 @@
  */
 package fi.iki.jka;
 
-import java.awt.BorderLayout;
-import java.awt.Point;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
-
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 
 /**
  * A list of JPhotos.
@@ -53,6 +46,10 @@ public class JPhotoList extends JList {
         setVisibleRowCount(rows);
         **/
         setSelectedIndex(0);
+    }
+
+    public JPhotoList(IPhotoCollection photos, int splitWidth) {
+        new JPhotoList(photos, splitWidth);
     }
 
     public JPhotoCollection getPhotoModel() {
@@ -205,6 +202,9 @@ public class JPhotoList extends JList {
         frame.show();
         // picFrame.show();
     }
-    
+
+    public void setPhotoModel(IPhotoCollection photos) {
+        setPhotoModel(photos);
+    }
 }
 

@@ -6,20 +6,10 @@
  */
 package fi.iki.jka;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Font;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-
-import javax.swing.AbstractAction;
-import javax.swing.ActionMap;
-import javax.swing.InputMap;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.KeyStroke;
 
 public class JPhotoShow extends JFrame {
     JPhotoCollection photos = null;
@@ -35,7 +25,7 @@ public class JPhotoShow extends JFrame {
     public static final String A_EXIT = "exit";
     
     public JPhotoShow(JPhotoCollection photos) {
-        this(photos, 5000, null);
+        this(photos, 5000, (JList) null);
     }
     
     public JPhotoShow(JPhotoCollection photos, int interval, JList list) {
@@ -83,7 +73,11 @@ public class JPhotoShow extends JFrame {
             timer.start();
         }
     }
-    
+
+    public JPhotoShow(IPhotoCollection photos, int interval, JPhotoList list) {
+        new JPhotoShow(photos, interval, list);
+    }
+
     void addAction(String code, KeyStroke key) {
         InputMap im = panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         ActionMap am = panel.getActionMap();        
@@ -143,7 +137,7 @@ public class JPhotoShow extends JFrame {
         isStandalone = true;
         System.out.println("This is a standalone JShow");
 
-        JPhotoShow show = new JPhotoShow(new JPhotoCollection(args[0]), 5000, null);
+        JPhotoShow show = new JPhotoShow(new JPhotoCollection(args[0]), 5000, (JList) null);
 
         show.setVisible(true);
     }
