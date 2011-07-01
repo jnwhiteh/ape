@@ -203,7 +203,7 @@ public class JPhotoCollection extends AbstractListModel
         setDirty(true);
     }
 
-    public void setCoverPhoto(JPhoto photo) {
+    public void setCoverPhoto(IJPhoto photo) {
         // XXX Should somehow notify other collections which might link to us,
         // since they should update their display!
         pageInfo.coverPhotoName = photo.getImageName();

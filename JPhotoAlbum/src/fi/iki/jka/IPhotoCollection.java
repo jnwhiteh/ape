@@ -60,13 +60,13 @@ public interface IPhotoCollection {
 
     void setWatermark(String res);
 
-    JPhoto get(int index);
+    IJPhoto get(int index);
 
     JPhotoPageInfo getPageInfo();
 
     int getSize();
 
-    void setCoverPhoto(JPhoto jPhoto);
+    void setCoverPhoto(IJPhoto jPhoto);
 
     void setBackgroundColor(Color color);
 

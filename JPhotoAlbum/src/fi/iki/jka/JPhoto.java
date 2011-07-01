@@ -34,7 +34,7 @@ import java.io.*;
 import java.lang.ref.SoftReference;
 import java.util.*;
 
-public class JPhoto extends Observable implements Transferable, Serializable {
+public class JPhoto extends Observable implements Transferable, Serializable, IJPhoto {
 
     public static final DataFlavor PHOTO_FLAVOR
         = new DataFlavor(JPhoto.class, "Single JPG Photograph");

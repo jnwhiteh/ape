@@ -525,7 +525,7 @@ public class JPhotoFrame extends JFrame
             int index = list.getSelectedIndex();
             if (index<0)
                 index = 0;
-            JPhoto photo = photos.get(index);
+            IJPhoto photo = photos.get(index);
             if (photo.getImageName()!=null) {
                 photos.setCoverPhoto(photos.get(index));
                 setFrameIcon();
