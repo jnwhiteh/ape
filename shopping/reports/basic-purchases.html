@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link href="files/css/fitnesse.css" rel="stylesheet" type="text/css" />
+
+    <title>Till Receipt for Basic Purchases</title>
+  </head>
+
+  <body>	<link rel="stylesheet" type="text/css" href="files/css/fitnesse.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="files/css/fitnesse.css" media="print"/>
+<h1>Till Receipt for Basic Purchases</h1><table border="0"
+      cellpadding="">
+      <tr>
+        <td colspan="3">Given the following products</td>
+      </tr>
+
+      <tr>
+        <td>Name</td>
+
+        <td>Barcode</td>
+
+        <td>Unit Price</td>
+
+        <td>Is Available In 3 For 2 Discount</td>
+
+      </tr>
+
+      <tr>
+        <td>Milk</td>
+
+        <td>11111111</td>
+
+        <td>0.50</td>
+
+        <td>false</td>
+      </tr>
+
+      <tr>
+        <td>Cheese</td>
+
+        <td>22222222</td>
+
+        <td>1.00</td>
+
+        <td>false</td>
+      </tr>
+
+      <tr>
+        <td>Bread</td>
+
+        <td>33333333</td>
+
+        <td>0.75</td>
+
+        <td>false</td>
+      </tr>
+    </table><table border="0">
+      <tr>
+        <td>Given the checkout has been initialised</td>
+      </tr>
+    </table><p>The customer buys two cartons of milk, one pack of cheese and
+  one loaf of bread.</p><table border="0">
+      <tr>
+        <td>The customer purchases</td>
+      </tr>
+	  
+	  <tr>
+	    <td>Product</td>
+	  </tr>
+	  
+      <tr>
+        <td>Milk</td>
+      </tr>
+
+      <tr>
+        <td>Cheese</td>
+      </tr>
+
+      <tr>
+        <td>Milk</td>
+      </tr>
+
+      <tr>
+        <td>Bread</td>
+      </tr>
+    </table>
+    
+    <p>The receipt lists the product in the order that they were
+  scanned, except that all purchases of the same product are shown as a single
+  line on the receipt.</p>
+  
+  <table bgcolor="" border="0">
+      <tr>
+        <td colspan="2">The receipt shows</td>
+      </tr>
+      
+      <tr>
+        <td>Line</td>
+        <td>Text</td>
+      </tr>
+
+      <tr class="receiptLine">
+        <td class="pass">1</td>
+        <td class="pass">2 Milk @ 0.50 each = 1.00</td>
+      </tr>
+
+      <tr class="receiptLine">
+        <td class="pass">2</td>
+        <td class="pass">1 Cheese @ 1.00 each = 1.00</td>
+      </tr>
+
+      <tr class="receiptLine">
+        <td class="pass">3</td>
+        <td class="pass">1 Bread @ 0.75 each = 0.75</td>
+      </tr>
+
+      <tr class="receiptLine">
+        <td class="pass">4</td>
+        <td class="pass">Total = 2.75</td>
+      </tr>
+    </table></body>
+</html>

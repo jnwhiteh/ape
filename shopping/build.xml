@@ -1,0 +1,50 @@
+<project name="Shopping" default="full-build">
+	<property name="product" value="shopping" />
+
+	<path id="compile.classpath.checkout-till">
+	</path>
+
+	<path id="compile.classpath.acceptance-tests">
+		<fileset dir="lib/fit" />
+		<pathelement location="build/checkout-till.jar" />
+	</path>
+
+	<path id="run.classpath.acceptance-tests">
+		<pathelement location="build/acceptance-tests.jar" />
+		<path refid="compile.classpath.acceptance-tests" />
+	</path>
+    
+	<target name="full-build" description="Builds everything from scratch" depends="clean, test" />
+    
+	<target name="clean" description="Removes all build artefacts">
+		<delete dir="build" />
+		<delete dir="reports" />
+	</target>
+
+	<target name="test" depends="jars">
+		<java classname="fitlibrary.runner.FolderRunner" classpathref="run.classpath.acceptance-tests">
+			<arg value="fit" />
+			<arg value="reports" />
+		</java>
+	</target>
+
+    <target name="jars">
+        <compile-module name="checkout-till" />
+        <compile-module name="acceptance-tests" />
+    </target>
+	
+	<macrodef name="compile-module">
+		<attribute name="name" />
+
+		<sequential>
+			<mkdir dir="build/classes/@{name}" />
+
+			<javac srcdir="src/@{name}" destdir="build/classes/@{name}" debug="${debug}" classpathref="compile.classpath.@{name}" />
+
+			<jar jarfile="build/@{name}.jar">
+				<fileset dir="build/classes/@{name}" />
+				<fileset dir="src/@{name}" />
+			</jar>
+		</sequential>
+	</macrodef>
+</project>

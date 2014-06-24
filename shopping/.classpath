@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/acceptance-tests"/>
+	<classpathentry kind="src" path="src/checkout-till"/>
+	<classpathentry kind="src" path="src/unit-tests"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/fit/fitlibraryRunner-20070110.jar" sourcepath="lib/fit/fitLibraryRunner-20070110-src.jar"/>
+	<classpathentry kind="lib" path="lib/jmock/jmock-2.5.0.jar" sourcepath="lib/jmock/jmock-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jmock/jmock-junit4-2.5.0.jar" sourcepath="lib/jmock/jmock-junit4-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/junit/junit-4.4.jar" sourcepath="lib/junit/junit-4.4-src.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

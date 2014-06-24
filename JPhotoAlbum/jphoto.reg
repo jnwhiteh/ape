@@ -1,0 +1,14 @@
+REGEDIT4
+[HKEY_CLASSES_ROOT\JPhotoAlbumFile]
+@="JPhotoAlbum"
+"EditFlags"=dword:00000000
+"BrowserFlags"=dword:8
+[HKEY_CLASSES_ROOT\JPhotoAlbumFile\shell\open\command]
+@="c:\\windows\\system32\\javaw.exe -jar e:\\java\\PhotoAlbum\\lib\\JPhotoAlbum.jar \"%1\""
+[HKEY_CLASSES_ROOT\.jph]
+@="JPhotoAlbumFile"
+
+[HKEY_CLASSES_ROOT\Directory\shell\Create_PhotoAlbum]
+@="Import to a new PhotoAlbum"
+[HKEY_CLASSES_ROOT\Directory\shell\Create_PhotoAlbum\command]
+@="c:\\windows\\system32\\javaw.exe -jar e:\\java\\PhotoAlbum\\lib\\JPhotoAlbum.jar \"%1\""

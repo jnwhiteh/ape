@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="files/css/fitnesse.css" rel="stylesheet" type="text/css"/>
+
+    <title>Three for the price of two deals</title>
+</head>
+
+<body><h1>Three for the price of two deals</h1>
+<table border="0"
+       cellpadding="">
+    <tr>
+        <td colspan="4">Given the following products.</td>
+    </tr>
+
+    <tr>
+        <td>Name</td>
+
+        <td>Barcode</td>
+
+        <td>Unit Price</td>
+
+        <td>Is Available In 3 For 2 Discount</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+
+        <td>22222222</td>
+
+        <td>1.00</td>
+
+        <td>true</td>
+    </tr>
+
+    <tr>
+        <td>Bread</td>
+
+        <td>33333333</td>
+
+        <td>0.75</td>
+
+        <td>false</td>
+    </tr>
+</table>
+<table border="0">
+    <tr>
+        <td>Given the checkout has been initialised</td>
+    </tr>
+</table>
+<p>The customer buys two packs of cheese and
+    one loaf of bread.</p>
+<table border="0">
+    <tr>
+        <td>The customer purchases</td>
+    </tr>
+
+    <tr>
+        <td>Product</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Bread</td>
+    </tr>
+</table>
+
+<p>The order total includes the two most expensive items and gives the third for free.</p>
+
+<table bgcolor="" border="0">
+    <tr>
+        <td colspan="2">The receipt shows</td>
+    </tr>
+
+    <tr>
+        <td>Line</td>
+        <td>Text</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>1</td>
+        <td>3 Cheese @ 1.00 each = 3.00</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>2</td>
+        <td>Discount: 1 Cheese @ 1.00 each = -1.00</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>3</td>
+        <td>1 Bread @ 0.75 each = 0.75</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>4</td>
+        <td>Total = 2.75</td>
+    </tr>
+</table>
+
+<table border="0">
+    <tr>
+        <td>Given the checkout has been initialised</td>
+    </tr>
+</table>
+<p>The customer buys six packs of cheese</p>
+<table border="0">
+    <tr>
+        <td>The customer purchases</td>
+    </tr>
+
+    <tr>
+        <td>Product</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+       <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+
+    <tr>
+        <td>Cheese</td>
+    </tr>
+</table>
+
+<p>The order total includes four packs of cheese and gives two packs of cheese for free.</p>
+
+<table bgcolor="" border="0">
+    <tr>
+        <td colspan="2">The receipt shows</td>
+    </tr>
+
+    <tr>
+        <td>Line</td>
+        <td>Text</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>1</td>
+        <td>6 Cheese @ 1.00 each = 6.00</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>2</td>
+        <td>Discount: 2 Cheese @ 1.00 each = -2.00</td>
+    </tr>
+
+    <tr class="receiptLine">
+        <td>3</td>
+        <td>Total = 4.00</td>
+    </tr>
+</table>
+</body>
+</html>
